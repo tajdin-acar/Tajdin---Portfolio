@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tajdin Acar | Portfolio Finance</title>
+  <meta
+    name="description"
+    content="Portfolio de Tajdin Acar — Alternance en analyse financière, contrôle de gestion, reporting et pilotage de la performance."
+  />
+  <meta property="og:title" content="Tajdin Acar | Portfolio Finance" />
+  <meta
+    property="og:description"
+    content="Alternance en analyse financière, contrôle de gestion, reporting et aide à la décision."
+  />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b1020" />
+
+  <style>
+    :root {
+      --bg: #070b16;
+      --bg-2: #0d1326;
+      --panel: rgba(15, 23, 42, 0.72);
+      --panel-strong: rgba(15, 23, 42, 0.92);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #edf2ff;
+      --muted: #aab4d0;
+      --muted-2: #7f8baa;
+      --primary: #7dd3fc;
+      --primary-2: #38bdf8;
+      --accent: #a78bfa;
+      --success: #86efac;
+      --danger: #fca5a5;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --container: 1180px;
+      --nav-h: 80px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.14), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(167, 139, 250, 0.16), transparent 24%),
+        radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.08), transparent 22%),
+        linear-gradient(180deg, #050814 0%, #090d19 45%, #0a0f1d 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .section-sm {
+      padding: 72px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      display: inline-block;
+    }
+
+    h1, h2, h3, h4, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      margin-bottom: 22px;
+      max-width: 13ch;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      max-width: 62ch;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary) 0%, #ffffff 45%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.74), rgba(15, 23, 42, 0.9));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      min-height: 48px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-2), var(--accent));
+      color: #07111d;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.08);
+      color: var(--text);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(125, 211, 252, 0.24);
+      color: var(--primary);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(125, 211, 252, 0.1);
+      border: 1px solid rgba(125, 211, 252, 0.18);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      background: rgba(5, 8, 20, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, rgba(56,189,248,0.25), rgba(167,139,250,0.25));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 12px 16px;
+      border: 1px solid rgba(125, 211, 252, 0.25);
+      border-radius: 999px;
+      color: var(--primary) !important;
+    }
+
+    .menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding-top: 48px;
+      min-height: calc(100vh - var(--nav-h));
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.82fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-left {
+      padding: 28px 0;
+    }
+
+    .hero-sub {
+      margin-top: 0;
+      margin-bottom: 16px;
+      max-width: 18ch;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      color: #d8e2ff;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .hero-note span {
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .hero-card {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -20% -35% auto;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(56,189,248,0.16), transparent 60%);
+      pointer-events: none;
+    }
+
+    .profile-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #07111d;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+
+    .profile-name {
+      margin: 0;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .profile-role {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .profile-list {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0 0;
+    }
+
+    .profile-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .profile-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .profile-item span:first-child {
+      color: var(--muted-2);
+      font-weight: 600;
+    }
+
+    .profile-item span:last-child,
+    .profile-item a {
+      color: var(--text);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .stats {
+      margin-top: -12px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat {
+      padding: 24px;
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat::after {
+      content: "";
+      position: absolute;
+      inset: auto auto -40px -40px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 65%);
+    }
+
+    .stat-number {
+      display: block;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.04em;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+      max-width: 20ch;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 36px;
+    }
+
+    .section-head p {
+      max-width: 58ch;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 20px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 22px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(125,211,252,0.3), rgba(255,255,255,0.04));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 74px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 32px;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.08);
+    }
+
+    .job {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    .job h3 {
+      margin-bottom: 4px;
+      font-size: 1.22rem;
+    }
+
+    .job-role {
+      color: var(--primary);
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .job-meta {
+      color: var(--muted-2);
+      font-size: 0.95rem;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .bullet-list li + li {
+      margin-top: 10px;
+    }
+
+    .edu-grid,
+    .skills-grid,
+    .extras-grid,
+    .contact-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .edu-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .extras-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .mini-tag {
+      display: inline-flex;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: rgba(125,211,252,0.08);
+      border: 1px solid rgba(125,211,252,0.14);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .chips span {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #d8e2ff;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .highlight-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      margin-top: 9px;
+      flex: 0 0 auto;
+    }
+
+    .contact-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer {
+      padding: 28px 0 42px;
+      color: var(--muted-2);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      margin: 20px 0 0;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .section-head,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid,
+      .edu-grid,
+      .skills-grid,
+      .extras-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 36px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .topbar {
+        height: 74px;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 16px;
+        border-radius: 18px;
+        background: rgba(10, 14, 28, 0.96);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.03);
+      }
+
+      .nav-links .nav-cta {
+        text-align: center;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .stats-grid,
+      .edu-grid,
+      .skills-grid,
+      .extras-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .job {
+        grid-template-columns: 1fr;
+      }
+
+      .job-meta {
+        white-space: normal;
+      }
+
+      .timeline {
+        gap: 16px;
+      }
+
+      .timeline-item {
+        padding-left: 58px;
+      }
+
+      .timeline::before {
+        left: 17px;
+      }
+
+      .timeline-item::before {
+        left: 9px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .btns {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-badge">TA</span>
+        <span>Tajdin Acar</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#profil">Profil</a>
+        <a href="#experience">Expériences</a>
+        <a href="#formation">Formation</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-left reveal">
+          <div class="tag">Disponible pour une alternance de 12 mois — Septembre 2026</div>
+          <h1>
+            Je construis des analyses
+            <span class="gradient-text">claires, fiables et utiles</span>
+            pour la décision.
+          </h1>
+          <p class="hero-sub">
+            Finance d’entreprise · Contrôle de gestion · Reporting · Power BI · Analyse financière
+          </p>
+          <p class="lead">
+            Étudiant à l’IAE Paris Panthéon-Sorbonne après un parcours à l’ESSEC, je recherche une alternance en analyse financière dans un environnement exigeant où rigueur, performance et vision business comptent réellement.
+          </p>
+
+          <div class="btns">
+            <a class="btn btn-primary" href="#contact">Me contacter</a>
+            <a class="btn btn-secondary" href="mailto:tajdinacar@icloud.com">Envoyer un email</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/tajdin-acar-600872226" target="_blank" rel="noreferrer">Voir LinkedIn</a>
+          </div>
+
+          <div class="hero-note">
+            <span>Analyse de performance</span>
+            <span>Clôture & forecast</span>
+            <span>Business partnering</span>
+            <span>Pilotage financier</span>
+          </div>
+        </div>
+
+        <aside class="hero-card glass card reveal">
+          <div class="profile-head">
+            <div class="avatar">TA</div>
+            <div>
+              <h2 class="profile-name">Tajdin Acar</h2>
+              <p class="profile-role">Candidat en alternance — Analyse financière</p>
+            </div>
+          </div>
+
+          <div class="profile-list">
+            <div class="profile-item">
+              <span>Localisation</span>
+              <span>Paris, France</span>
+            </div>
+            <div class="profile-item">
+              <span>Email</span>
+              <a href="mailto:tajdinacar@icloud.com">tajdinacar@icloud.com</a>
+            </div>
+            <div class="profile-item">
+              <span>Téléphone</span>
+              <a href="tel:+33782992164">+33 7 82 99 21 64</a>
+            </div>
+            <div class="profile-item">
+              <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/tajdin-acar-600872226" target="_blank" rel="noreferrer">Voir le profil</a>
+            </div>
+            <div class="profile-item">
+              <span>Objectif</span>
+              <span>Alternance en analyse financière</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="chips" style="margin-top:18px;">
+            <span>Excel</span>
+            <span>Power BI</span>
+            <span>Python</span>
+            <span>SAP</span>
+            <span>Oracle</span>
+            <span>ERP</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="stats section-sm">
+      <div class="container">
+        <div class="stats-grid">
+          <article class="stat glass reveal">
+            <span class="stat-number">2</span>
+            <span class="stat-label">projets Power BI pilotés pour la Direction Financière</span>
+          </article>
+          <article class="stat glass reveal">
+            <span class="stat-number">22</span>
+            <span class="stat-label">distributeurs SFR analysés à partir de leurs liasses fiscales</span>
+          </article>
+          <article class="stat glass reveal">
+            <span class="stat-number">23</span>
+            <span class="stat-label">magasins suivis chez Weldom</span>
+          </article>
+          <article class="stat glass reveal">
+            <span class="stat-number">200 M€</span>
+            <span class="stat-label">de chiffre d’affaires suivis en environnement retail</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="profil">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Profil</div>
+            <h2>Un profil orienté performance, structuration et impact</h2>
+          </div>
+          <p>
+            Mon parcours combine finance d’entreprise, contrôle de gestion, reporting et gouvernance. Je cherche à rejoindre une entreprise où je pourrai produire des analyses solides, faire parler la donnée financière et contribuer à de vraies décisions.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card glass card reveal">
+            <h3>Ce que j’apporte</h3>
+            <p>
+              Une capacité à travailler sur des sujets à la fois analytiques et opérationnels : suivi de performance, écarts réel/budget/forecast, fiabilisation du reporting, lecture de données financières et structuration d’outils d’aide à la décision.
+            </p>
+            <p>
+              J’aime transformer des données parfois complexes en informations lisibles, exploitables et utiles pour les équipes financières et les managers.
+            </p>
+          </article>
+
+          <article class="about-card glass card reveal">
+            <h3>Ce que je recherche</h3>
+            <p>
+              Une alternance en analyse financière, contrôle de gestion ou pilotage de la performance, idéalement dans un environnement exigeant et formateur, avec de vraies responsabilités et une forte culture du résultat.
+            </p>
+            <div class="highlight-list">
+              <div class="highlight-item">
+                <span class="highlight-dot"></span>
+                <div>
+                  <strong>Finance & business</strong>
+                  <p>Relier les chiffres aux enjeux opérationnels et stratégiques.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-dot"></span>
+                <div>
+                  <strong>Fiabilité</strong>
+                  <p>Améliorer les outils, les processus et la lisibilité du reporting.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-dot"></span>
+                <div>
+                  <strong>Progression</strong>
+                  <p>Évoluer vite dans un cadre ambitieux et stimulant.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Expériences</div>
+            <h2>Des expériences au croisement de la finance, du reporting et de la gouvernance</h2>
+          </div>
+          <p>
+            Mon parcours m’a permis d’intervenir à la fois sur des sujets de pilotage financier, d’analyse de performance, de structuration d’outils et d’organisation.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item glass card reveal">
+            <div class="job">
+              <div>
+                <h3>SFR</h3>
+                <p class="job-role">Alternant Contrôleur de gestion financier</p>
+              </div>
+              <div class="job-meta">2025 – 2026 · Paris, France</div>
+            </div>
+            <ul class="bullet-list">
+              <li>Suivi mensuel de lignes de coûts et de revenus stratégiques dans le cadre des clôtures, du budget et des forecasts.</li>
+              <li>Production d’analyses de performance et d’écarts réel / budget / forecast afin d’éclairer les décisions de gestion.</li>
+              <li>Pilotage de deux projets Power BI pour la Direction Financière afin de fiabiliser le reporting, accélérer la production des analyses et améliorer la lisibilité des indicateurs.</li>
+              <li>Analyse financière de 22 distributeurs SFR à partir de leurs liasses fiscales, avec évaluation de leur performance, de leur rentabilité et de leurs équilibres financiers.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item glass card reveal">
+            <div class="job">
+              <div>
+                <h3>Sorbonne Junior Conseil</h3>
+                <p class="job-role">Secrétaire Général</p>
+              </div>
+              <div class="job-meta">2025 – 2026 · Paris, France</div>
+            </div>
+            <ul class="bullet-list">
+              <li>Pilotage des sujets de gouvernance, de conformité et d’organisation interne de la Junior-Entreprise.</li>
+              <li>Formalisation et amélioration des procédures afin de fiabiliser les pratiques administratives et documentaires.</li>
+              <li>Appui à la préparation des audits et au suivi des exigences de la CNJE dans une logique de professionnalisation continue.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item glass card reveal">
+            <div class="job">
+              <div>
+                <h3>Weldom</h3>
+                <p class="job-role">Stagiaire + CDD Analyste FP&amp;A</p>
+              </div>
+              <div class="job-meta">2024 – 2025 · Oise, France</div>
+            </div>
+            <ul class="bullet-list">
+              <li>Réalisation de clôtures mensuelles, forecasts et analyses budgétaires dans un environnement retail.</li>
+              <li>Suivi de la performance de 23 magasins représentant environ 200 M€ de chiffre d’affaires, à travers l’analyse de la marge, des stocks et de la masse salariale.</li>
+              <li>Développement et amélioration d’outils de pilotage et de reporting Power BI pour accompagner la planification financière à 3 ans.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item glass card reveal">
+            <div class="job">
+              <div>
+                <h3>SAS ASYA</h3>
+                <p class="job-role">Assistant en gestion financière</p>
+              </div>
+              <div class="job-meta">2021 – 2023 · Oise, France</div>
+            </div>
+            <ul class="bullet-list">
+              <li>Appui au pilotage financier de l’entreprise à travers l’analyse mensuelle des résultats, le suivi des flux financiers et la préparation de synthèses de gestion.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formation">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Formation</div>
+            <h2>Une base académique solide en finance, gestion et analyse</h2>
+          </div>
+          <p>
+            Mon parcours académique combine une formation business à l’ESSEC, une spécialisation en contrôle de gestion et audit à l’IAE Paris, ainsi qu’une ouverture internationale à KU Leuven.
+          </p>
+        </div>
+
+        <div class="edu-grid">
+          <article class="glass card reveal">
+            <span class="mini-tag">2025 – 2027</span>
+            <h3>Université Paris 1 Panthéon-Sorbonne — IAE Paris</h3>
+            <p><strong>Master Contrôle de Gestion et Audit Organisationnel</strong></p>
+            <p class="muted">Spécialisation en contrôle de gestion, audit, pilotage budgétaire, reporting et aide à la décision.</p>
+          </article>
+
+          <article class="glass card reveal">
+            <span class="mini-tag">2021 – 2025</span>
+            <h3>ESSEC Business School</h3>
+            <p><strong>Global Bachelor of Business Administration</strong></p>
+            <p class="muted">Parcours orienté finance d’entreprise, contrôle de gestion, stratégie et analyse de la performance.</p>
+          </article>
+
+          <article class="glass card reveal">
+            <span class="mini-tag">2024</span>
+            <h3>KU Leuven — Faculty of Economics and Business</h3>
+            <p><strong>Programme d’échange académique</strong></p>
+            <p class="muted">Cours suivis en finance, économie et environnement international.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="competences">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Compétences</div>
+            <h2>Compétences techniques, analytiques et opérationnelles</h2>
+          </div>
+          <p>
+            Je développe un profil complet mêlant analyse financière, pilotage de performance et maîtrise d’outils de reporting et de modélisation.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="glass card reveal">
+            <h3>Finance & pilotage</h3>
+            <div class="chips">
+              <span>Analyse financière</span>
+              <span>Contrôle de gestion</span>
+              <span>Budget</span>
+              <span>Forecast</span>
+              <span>Clôture mensuelle</span>
+              <span>Analyse d’écarts</span>
+              <span>Reporting</span>
+            </div>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>Data & outils</h3>
+            <div class="chips">
+              <span>Excel</span>
+              <span>Google Sheets</span>
+              <span>Power BI</span>
+              <span>Python</span>
+              <span>SAP</span>
+              <span>Oracle</span>
+              <span>ERP</span>
+            </div>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>Organisation & communication</h3>
+            <div class="chips">
+              <span>Structuration</span>
+              <span>Rigueur</span>
+              <span>Synthèse</span>
+              <span>Professionnalisation</span>
+              <span>Conformité</span>
+              <span>Gouvernance</span>
+              <span>Amélioration continue</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Langues & certifications</div>
+            <h2>Un profil également ouvert à l’international</h2>
+          </div>
+          <p>
+            Mon parcours combine environnement business international, compétences linguistiques et certifications reconnues en finance.
+          </p>
+        </div>
+
+        <div class="extras-grid">
+          <article class="glass card reveal">
+            <h3>Langues</h3>
+            <div class="chips">
+              <span>Français — langue maternelle</span>
+              <span>Anglais — C1</span>
+              <span>Allemand — B1</span>
+              <span>Kurde / Turc — langue maternelle</span>
+            </div>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>Certifications</h3>
+            <div class="chips">
+              <span>Bloomberg Market Concepts</span>
+              <span>Bloomberg ESG</span>
+              <span>JPMorgan Investment Banking Job Simulation</span>
+              <span>Candidat CFA niveau 1</span>
+              <span>Excel — Harvard Business School</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <article class="contact-panel glass card reveal">
+          <div class="eyebrow">Contact</div>
+          <h2>Discutons d’une opportunité d’alternance</h2>
+          <p>
+            Je suis disponible pour échanger autour d’un poste en analyse financière, contrôle de gestion, reporting ou pilotage de la performance.
+          </p>
+
+          <div class="btns">
+            <a class="btn btn-primary" href="mailto:tajdinacar@icloud.com">tajdinacar@icloud.com</a>
+            <a class="btn btn-secondary" href="tel:+33782992164">+33 7 82 99 21 64</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/tajdin-acar-600872226" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="glass card reveal">
+          <h3>Pourquoi ce portfolio</h3>
+          <p>
+            Ce site a été conçu pour donner une vision rapide, structurée et professionnelle de mon profil, au-delà du CV.
+          </p>
+
+          <div class="highlight-list">
+            <div class="highlight-item">
+              <span class="highlight-dot"></span>
+              <div>
+                <strong>Lecture rapide</strong>
+                <p>Les recruteurs voient immédiatement ton positionnement et tes expériences clés.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-dot"></span>
+              <div>
+                <strong>Image premium</strong>
+                <p>Le rendu est plus moderne qu’un simple document joint.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-dot"></span>
+              <div>
+                <strong>Déploiement simple</strong>
+                <p>Un seul fichier à mettre sur GitHub Pages, sans dépendance compliquée.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Tajdin Acar</span>
+      <span>Portfolio candidature — Finance · Contrôle de gestion · Analyse</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const links = document.querySelectorAll(".nav-links a");
+    const reveals = document.querySelectorAll(".reveal");
+    const yearEl = document.getElementById("year");
+
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+        });
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
